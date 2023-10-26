@@ -10,7 +10,10 @@ import string
 import random
 from time import sleep
 from serial.serialutil import Timeout
-import StringIO
+try:
+    from StringIO import StringIO
+except ImportError:
+    from io import StringIO
 import tempfile
 
 logging.basicConfig(level=logging.DEBUG)
